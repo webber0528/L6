@@ -1,0 +1,22 @@
+<%= flash[:notice] %>
+
+<% @products.each do |t| %>
+<p>
+
+<%= t.name %>
+<%= t.price %>
+<%= link_to '削除', "/products/#{t.id}", method: :delete %>
+<%= link_to 'カートに入れる', new_cart_item_path(product_id: t.id) %>
+
+</p>
+
+<% end %>
+
+
+
+
+
+
+
+<p><%= link_to '商品を新規登録する', new_product_path %></p>
+<p><%= link_to 'カートを見る',  %></p>

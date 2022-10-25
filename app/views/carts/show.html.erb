@@ -1,0 +1,10 @@
+<% @cartitems.each do |t| %>
+<p>'商品名'</p>
+<%= CartItem.find(@cartitems.cart_id).name %>
+<p>'価格'</p>
+<%= Product.find(@carts.product_id).price %>
+<p>'個数'</p>
+<%= Product.find(@carts.product_id).qty %>
+<p><% link_to 'カートから削除する', "/cart_items/#{t.id}", method: :delete %></p>
+<p><%= link_to '商品一覧ページ', root_path %></p>
+<% end %>

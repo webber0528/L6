@@ -12,12 +12,12 @@ class CartItemsController < ApplicationController
     cart_id: current_cart.id)
     @cartitems.save
       redirect_to root_path
-
     
-  def destroy
-    @cartitems = CartItem.find()
   end
-    
+
+
+  def destroy
+    @cartitems = CartItem.where(current_cart)
   end
   
 

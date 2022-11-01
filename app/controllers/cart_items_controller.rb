@@ -17,7 +17,9 @@ class CartItemsController < ApplicationController
 
 
   def destroy
-    @cartitems = CartItem.where(current_cart)
+    @cartitems = CartItem.find(params[:id])
+    @cartitems.destroy
+    redirect_to root_path
   end
   
 

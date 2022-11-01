@@ -6,7 +6,7 @@
 <%= Product.find(t.product_id).price %>
 '個数:'
 <%= t.qty %>
-<%= link_to 'カートから削除する', "/cart_items/#{t.id}", method: :delete %>
+<%= link_to 'カートから削除する',cart_item_path(t), method: :delete %>
 </p>
 
 <% end %>
